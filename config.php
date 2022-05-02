@@ -1,11 +1,11 @@
 <?php
   
-  $servidor = "localhost";
-  $usuario = "sncadm";
-  $senha = "Oracle123";
-  $dbname = "test";
+  $servidor = "BRBEL2502172";
+  $usuario = "ADM_DIGITAL";
+  $senha = "Adm_Digital1475963";
+  $dbname = "tabelas_diversas";
   
-$conn = mysqli_connect($servidor, $usuario, $senha, $dbname) or die("Não foi possível a conexão com o Banco");
+$conn = mysqli_connect($servidor, $usuario, $senha, $dbname) or die("Nï¿½o foi possï¿½vel a conexï¿½o com o Banco");
 
 //$db = mysql_select_db($dbname, $conn) or die("Tabela do banco de dados nao encontrada");
 
