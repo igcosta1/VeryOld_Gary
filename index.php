@@ -1,10 +1,23 @@
+<?php 
+if(base64_decode(base64_decode($_COOKIE["e"])) != '-' && base64_decode(base64_decode($_COOKIE["e"])) != ''){
+$foto='http://brbel2502172:4000/Portal_de_Ferramentas_e_Servicos/service/fotos/'.base64_decode(base64_decode($_COOKIE['e']));
+}
+else{
+    $foto='http://brbel2502172:4000/ambiente_teste/gary_old/teamwork.png';
+}
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
 	<?header("Content-Type: text/html; charset=utf-8", true);?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-      <link rel="shortcut icon" href="robot.png" type="image/x-png">
+      <link rel="shortcut icon" href="gary2.0.png" type="image/x-png">
 	<link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -41,7 +54,7 @@
         <div class="form">
             <div class="bot-inbox inbox">
                 <div>
-                    <img src="robot.png" id="log_ed">
+                    <img src="gary2.0.png" style="width: 55px; height: 55px; border-radius: 50%" id="log_ed">
                 </div>
                 <div class="msg-header">
                     <p>Ol&aacute, eu sou o Gary, a intelig&ecirc;ncia artificial da SNC-Lavalin. Como posso te ajudar? <br> Lembre-se, eu ainda estou aprendendo. Por favor, evite acentos.</p>
@@ -59,7 +72,7 @@
     <div class="tittleIcon"  id="tittlex"  style="display: none;" onclick="myFunction()"
          class="icon">
          <div> 
-             <img src="robot.png" id="log_ed">   
+             <img src="gary2.0.png" style="width: 55px; height: 55px; border-radius: 50%" id="log_ed">   
         </div>
     </div>
                 
@@ -68,7 +81,7 @@
         $(document).ready(function(){
             $("#send-btn").on("click", function(){
                 $value = $("#data").val();
-                $msg = '<div class="user-inbox inbox">   <div class="msg-header"><p>'+ $value +'</p></div><div><img src="user.png" id="log_ed"></div></div>';
+                $msg = '<div class="user-inbox inbox">   <div class="msg-header"><p>'+ $value +'</p></div><div><img style="width: 55px; height: 55px; border-radius: 50%" src="<?php echo $foto;?>" id="log_ed"></div></div>';
                 $(".form").append($msg);
                 $("#data").val('');
                 
@@ -78,7 +91,7 @@
                     type: 'POST',
                     data: 'text='+$value,
                     success: function(result){
-                        $replay = '<div class="bot-inbox inbox"><div><img src="robot.png" id="log_ed"></div><div class="msg-header"><p>'+ result +'</p></div></div>';
+                        $replay = '<div class="bot-inbox inbox"><div><img src="gary2.0.png" id="log_ed" style="width: 55px; height: 55px; border-radius: 50%"></div><div class="msg-header"><p>'+ result +'</p></div></div>';
                         $(".form").append($replay);
                         //Quando o bate-papo desce, a barra de rolagem automaticamente desce para a parte inferior
                         $(".form").scrollTop($(".form")[0].scrollHeight);
